@@ -20,9 +20,8 @@ public class I18NManager {
     public static String getText(String language, String key) {
         ResourceBundle bundle = cache.get(language); // busca la llengua dintre de la cache i ho guarda dintre del bundle
         if (bundle == null) { // si el bundle està buit
-            System.out.println("NO EL TINC. VAIG A BUSCAR-HO A LA CACHE");
-            Locale locale = new Locale(language);
-            bundle = ResourceBundle.getBundle(language, locale); // No sé que fa aquesta linea ben bé
+            System.out.println("NO EL TINC. VAIG A BUSCAR-LO A LA CACHE");
+            bundle = ResourceBundle.getBundle(language);
             // ResourceBundle és una classe de Java que serveix per carregar fitxers de propietats (.properties)
             cache.put(language, bundle); // afegeix aquesta llengua a la cache
         }
